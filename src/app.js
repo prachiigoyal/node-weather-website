@@ -6,6 +6,7 @@ const forecast = require('./utils/forecast')
 const { response } = require('express')
 
 const app = express()
+const port = process.env.PORT || 3000
 const pathDirectory = path.join(__dirname,'../public')
 const pathtoTemplate = path.join(__dirname,'../templates/views')
 const pathtoPartials = path.join(__dirname,'../templates/partials')
@@ -97,7 +98,7 @@ app.get('*',(req,res)=>{
         errorMessage:'Page Not Found'
     })
 })
-app.listen(3000, ()=>
+app.listen(port, ()=>
     {
-        console.log('App started at port:3000')
+        console.log('App started at port:'+ port)
     })
